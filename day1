@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <title>第n回</title>
+</head>
+
+<body>
+    <h1>日記</h1>
+    <div>
+        <a>
+            何もわからずにとりあえず書いている状況。
+            ホームページ作りってどこから始めればいいんでしょうかね。
+            ゲームばっかりしているのでhtmlとcssの本でも買って勉強しようと思います。
+
+            2023/06/16
+        </a>
+
+
+    </div>
+    <div>
+        <a  href ="main.html">
+            前の画面に戻る
+        </a>
+    </div>
+    <script>
+
+    </script>
+</body>
