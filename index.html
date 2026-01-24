@@ -4,72 +4,113 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mukoufuniv | Portfolio</title>
+    
+    <link rel="stylesheet" href="css/style.css">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        body { font-family: "Helvetica Neue", Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background-color: #f9f9f9; }
-        .container { max-width: 800px; margin: 0 auto; padding: 20px; }
-        header { background: #fff; padding: 40px 20px; text-align: center; border-bottom: 1px solid #eee; margin-bottom: 30px; }
-        h1 { margin: 0; font-size: 2.5em; color: #24292e; }
-        .bio { color: #666; margin-top: 10px; }
-        section { background: #fff; padding: 25px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
-        h2 { border-bottom: 2px solid #0366d6; padding-bottom: 8px; margin-top: 0; color: #0366d6; }
-        .project { margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #eee; }
-        .project:last-child { border-bottom: none; }
-        .project-title { font-weight: bold; font-size: 1.2em; color: #333; text-decoration: none; }
-        .project-title:hover { color: #0366d6; }
-        .tags span { display: inline-block; background: #f1f8ff; color: #0366d6; padding: 2px 8px; border-radius: 12px; font-size: 0.8rem; margin: 5px 5px 0 0; }
-        .btn { display: inline-block; background: #24292e; color: #fff; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 0.9em; margin-top: 10px; }
-        .btn:hover { background: #444; }
-        footer { text-align: center; color: #888; margin-top: 40px; font-size: 0.8em; }
-    </style>
 </head>
 <body>
 
-<header>
-    <h1>mukoufuniv</h1>
-    <div class="bio">福井大学 / Engineer / Researcher</div>
-    <div style="margin-top: 15px;">
-        <a href="https://github.com/mukoufuniv" style="color: #333; font-size: 1.5em;"><i class="fab fa-github"></i></a>
-    </div>
-</header>
+    <header>
+        <div class="container header-content">
+            <h1>mukoufuniv</h1>
+            <p class="subtitle">Engineer / Researcher / University of Fukui</p>
+            <div class="social-links">
+                <a href="https://github.com/mukoufuniv" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                </div>
+        </div>
+    </header>
 
-<div class="container">
-    <section>
-        <h2><i class="fas fa-user"></i> About Me</h2>
-        <p>福井大学の学生です。Deep Learning（Dataset Distillation）の研究を行う傍ら、実用的なアプリケーション開発に取り組んでいます。</p>
-    </section>
-
-    <section>
-        <h2><i class="fas fa-tools"></i> Skills</h2>
-        <p><strong>Languages:</strong> Python, Java</p>
-        <p><strong>Tech Stack:</strong> PyTorch, MediaPipe, OpenCV, Gemini API, LangChain</p>
-    </section>
-
-    <section>
-        <h2><i class="fas fa-code"></i> Projects</h2>
+    <div class="container main-content">
         
-        <div class="project">
-            <a href="https://github.com/mukoufuniv/VLM-Lost-Item-Tracker" class="project-title">VLM Lost Item Tracker</a>
-            <p>VLM（視覚言語モデル）を活用し、「あれどこ置いたっけ？」を解消するシステム。タグ不要で日常の物の所在を記録・検索できます。</p>
-            <div class="tags">
-                <span>Python</span> <span>MediaPipe</span> <span>Gemini API</span>
-            </div>
-            <a href="https://github.com/mukoufuniv/VLM-Lost-Item-Tracker" class="btn">View Repo</a>
-        </div>
+        <section id="about">
+            <h2 class="section-title"><i class="fas fa-user"></i> About Me</h2>
+            <p>
+                福井大学の学生です。<strong>Deep Learning</strong>（特に Dataset Distillation）の研究に取り組む傍ら、
+                自ら課題を発見し解決するアプリケーション開発を行っています。
+            </p>
+            <p>
+                研究とエンジニアリングの両軸で、技術の社会実装を目指しています。
+            </p>
+        </section>
 
-        <div class="project">
-            <div class="project-title">ICIAE 2026 Research Paper</div>
-            <p>Automatic Recording System for Tag-less Lost-Item Retrieval Support Using a Vision-Language Model</p>
-            <div class="tags">
-                <span>Research</span> <span>International Conference</span>
+        <section id="skills">
+            <h2 class="section-title"><i class="fas fa-tools"></i> Skills</h2>
+            <div class="skill-group">
+                <h3>Languages</h3>
+                <div class="tags">
+                    <span>Python</span>
+                    <span>Java (Swing)</span>
+                    <span>HTML/CSS</span>
+                </div>
             </div>
-        </div>
-    </section>
-</div>
+            <div class="skill-group">
+                <h3>Libraries & Tools</h3>
+                <div class="tags">
+                    <span>PyTorch</span>
+                    <span>MediaPipe</span>
+                    <span>OpenCV</span>
+                    <span>LangChain</span>
+                    <span>Git / GitHub</span>
+                </div>
+            </div>
+        </section>
 
-<footer>
-    <p>&copy; 2026 mukoufuniv</p>
-</footer>
+        <section id="projects">
+            <h2 class="section-title"><i class="fas fa-code"></i> Projects</h2>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <h3>VLM Lost Item Tracker</h3>
+                    <a href="https://github.com/mukoufuniv/VLM-Lost-Item-Tracker" class="github-btn" target="_blank">
+                        View Code <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+                <p>
+                    <strong>「あれ、どこ置いたっけ？」をAIで解決する。</strong><br>
+                    VLM（視覚言語モデル）とカメラ映像を用いて、日常の物の所在をタグ無しで自動記録・検索できるシステム。
+                </p>
+                <div class="tags small-tags">
+                    <span>Python</span>
+                    <span>MediaPipe</span>
+                    <span>Gemini API</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <h3>[Research] Tag-less Lost-Item Retrieval</h3>
+                </div>
+                <p>
+                    <strong>ICIAE 2026 採択論文</strong><br>
+                    "Automatic Recording System for Tag-less Lost-Item Retrieval Support Using a Vision-Language Model"<br>
+                    既存の忘れ物防止タグの課題を解決する、画像認識ベースの新しい手法を提案。
+                </p>
+                <div class="tags small-tags">
+                    <span>Research Paper</span>
+                    <span>International Conference</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <h3>Dataset Distillation Research</h3>
+                </div>
+                <p>
+                    データセット蒸留におけるクロスアーキテクチャ性能の向上に関する研究。
+                </p>
+                <div class="tags small-tags">
+                    <span>Deep Learning</span>
+                    <span>Research</span>
+                </div>
+            </div>
+
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 mukoufuniv. All Rights Reserved.</p>
+    </footer>
 
 </body>
 </html>
