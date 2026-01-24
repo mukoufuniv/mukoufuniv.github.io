@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mukoufuniv | Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: "Helvetica Neue", Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background-color: #f9f9f9; }
+        .container { max-width: 800px; margin: 0 auto; padding: 20px; }
+        header { background: #fff; padding: 40px 20px; text-align: center; border-bottom: 1px solid #eee; margin-bottom: 30px; }
+        h1 { margin: 0; font-size: 2.5em; color: #24292e; }
+        .bio { color: #666; margin-top: 10px; }
+        section { background: #fff; padding: 25px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        h2 { border-bottom: 2px solid #0366d6; padding-bottom: 8px; margin-top: 0; color: #0366d6; }
+        .project { margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #eee; }
+        .project:last-child { border-bottom: none; }
+        .project-title { font-weight: bold; font-size: 1.2em; color: #333; text-decoration: none; }
+        .project-title:hover { color: #0366d6; }
+        .tags span { display: inline-block; background: #f1f8ff; color: #0366d6; padding: 2px 8px; border-radius: 12px; font-size: 0.8rem; margin: 5px 5px 0 0; }
+        .btn { display: inline-block; background: #24292e; color: #fff; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 0.9em; margin-top: 10px; }
+        .btn:hover { background: #444; }
+        footer { text-align: center; color: #888; margin-top: 40px; font-size: 0.8em; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>mukoufuniv</h1>
+    <div class="bio">福井大学 / Engineer / Researcher</div>
+    <div style="margin-top: 15px;">
+        <a href="https://github.com/mukoufuniv" style="color: #333; font-size: 1.5em;"><i class="fab fa-github"></i></a>
+    </div>
+</header>
+
+<div class="container">
+    <section>
+        <h2><i class="fas fa-user"></i> About Me</h2>
+        <p>福井大学の学生です。Deep Learning（Dataset Distillation）の研究を行う傍ら、実用的なアプリケーション開発に取り組んでいます。</p>
+    </section>
+
+    <section>
+        <h2><i class="fas fa-tools"></i> Skills</h2>
+        <p><strong>Languages:</strong> Python, Java</p>
+        <p><strong>Tech Stack:</strong> PyTorch, MediaPipe, OpenCV, Gemini API, LangChain</p>
+    </section>
+
+    <section>
+        <h2><i class="fas fa-code"></i> Projects</h2>
+        
+        <div class="project">
+            <a href="https://github.com/mukoufuniv/VLM-Lost-Item-Tracker" class="project-title">VLM Lost Item Tracker</a>
+            <p>VLM（視覚言語モデル）を活用し、「あれどこ置いたっけ？」を解消するシステム。タグ不要で日常の物の所在を記録・検索できます。</p>
+            <div class="tags">
+                <span>Python</span> <span>MediaPipe</span> <span>Gemini API</span>
+            </div>
+            <a href="https://github.com/mukoufuniv/VLM-Lost-Item-Tracker" class="btn">View Repo</a>
+        </div>
+
+        <div class="project">
+            <div class="project-title">ICIAE 2026 Research Paper</div>
+            <p>Automatic Recording System for Tag-less Lost-Item Retrieval Support Using a Vision-Language Model</p>
+            <div class="tags">
+                <span>Research</span> <span>International Conference</span>
+            </div>
+        </div>
+    </section>
+</div>
+
+<footer>
+    <p>&copy; 2026 mukoufuniv</p>
+</footer>
+
+</body>
+</html>
