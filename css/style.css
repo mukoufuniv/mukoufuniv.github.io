@@ -1,17 +1,16 @@
-/* --- ベース設定 --- */
+/* --- 1. ベース設定（全体を綺麗にする） --- */
 :root {
-    --primary-color: #0366d6; /* GitHubっぽい青 */
+    --primary-color: #0366d6; /* GitHubブルー */
     --text-color: #24292e;
-    --bg-color: #f6f8fa;
+    --bg-color: #f6f8fa;      /* 薄いグレーの背景 */
     --card-bg: #ffffff;
-    --accent-color: #58a6ff;
 }
 
 body {
-    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", sans-serif;
+    font-family: "Helvetica Neue", Arial, sans-serif;
     line-height: 1.6;
     color: var(--text-color);
-    background-color: var(--bg-color);
+    background-color: var(--bg-color); /* 背景色をつける */
     margin: 0;
     padding: 0;
 }
@@ -22,141 +21,215 @@ a {
     transition: 0.3s;
 }
 
-a:hover {
-    color: var(--accent-color);
-}
-
-/* --- レイアウト --- */
+/* --- 2. レイアウト（中央寄せの魔法） --- */
 .container {
-    max-width: 800px;
-    margin: 0 auto;
+    max-width: 800px;  /* 幅を800pxに制限 */
+    margin: 0 auto;    /* 左右を自動で空けて中央へ */
     padding: 0 20px;
 }
 
-/* --- ヘッダー --- */
+/* --- 3. ヘッダー（黒帯で引き締める） --- */
 header {
     background-color: #24292e;
     color: white;
-    padding: 60px 0;
-    text-align: center;
+    padding: 20px 0;
     margin-bottom: 40px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-header h1 {
-    font-size: 2.5rem;
-    margin: 0;
-    letter-spacing: 1px;
-}
-
-.subtitle {
-    color: #a0a0a0;
-    font-size: 1.1rem;
-    margin-top: 10px;
-}
-
-.social-links {
-    margin-top: 20px;
-}
-
-.social-links a {
-    color: white;
-    font-size: 1.2rem;
-    border: 1px solid #a0a0a0;
-    padding: 8px 16px;
-    border-radius: 20px;
-    display: inline-block;
-}
-
-.social-links a:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    color: white;
-}
-
-/* --- セクション共通 --- */
-section {
-    background: var(--card-bg);
-    padding: 30px;
-    margin-bottom: 30px;
-    border-radius: 8px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-    border: 1px solid #e1e4e8;
-}
-
-.section-title {
-    border-bottom: 2px solid var(--primary-color);
-    padding-bottom: 10px;
-    margin-top: 0;
-    color: var(--text-color);
-    font-size: 1.5rem;
-}
-
-.section-title i {
-    margin-right: 10px;
-    color: #586069;
-}
-
-/* --- スキルタグ --- */
-.skill-group {
-    margin-bottom: 20px;
-}
-
-.skill-group h3 {
-    font-size: 1rem;
-    color: #586069;
-    margin-bottom: 10px;
-}
-
-.tags span {
-    display: inline-block;
-    background-color: #f1f8ff;
-    color: var(--primary-color);
-    padding: 4px 12px;
-    border-radius: 15px;
-    font-size: 0.9rem;
-    margin: 0 5px 5px 0;
-    font-weight: 500;
-}
-
-/* --- プロジェクトカード --- */
-.project-card {
-    border-left: 4px solid var(--primary-color);
-    background: #fafbfc;
-    padding: 20px;
-    margin-bottom: 25px;
-    border-radius: 0 4px 4px 0;
-}
-
-.project-header {
+.header-content {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* タイトルとリンクを左右に離す */
     align-items: center;
-    margin-bottom: 10px;
 }
 
-.project-header h3 {
-    margin: 0;
-    font-size: 1.2rem;
-}
-
-.github-btn {
-    font-size: 0.9rem;
+header h1 a {
+    color: white;
+    font-size: 1.5rem;
     font-weight: bold;
 }
 
-.small-tags span {
-    font-size: 0.8rem;
-    background-color: #e1e4e8;
-    color: #24292e;
+.subtitle {
+    font-size: 0.9rem;
+    color: #a0a0a0;
+    margin: 0 0 0 15px;
+}
+
+/* ホームに戻るボタンのデザイン */
+.social-links a {
+    color: white;
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 5px 15px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+.social-links a:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+/* --- 4. 日記エリア（タイムライン × カード） --- */
+.section-title {
+    border-bottom: 2px solid #e1e4e8;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+}
+
+/* タイムラインの線 */
+#diary-list {
+    position: relative;
+    padding-left: 30px; /* 左側にスペース確保 */
+    border-left: 2px solid #e1e4e8; /* 縦線 */
+    margin-left: 10px;
+}
+
+/* 個々の日記エントリー */
+.diary-entry {
+    position: relative;
+    background: white;       /* 白いカードにする */
+    border: 1px solid #e1e4e8;
+    border-radius: 8px;      /* 角丸 */
+    padding: 25px;           /* 内側の余白 */
+    margin-bottom: 30px;     /* 次の記事との間隔 */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* うっすら影 */
+}
+
+/* タイムラインの「青い点」 */
+.diary-entry::before {
+    content: '';
+    position: absolute;
+    left: -42px; /* 線の上の位置調整 */
+    top: 25px;   /* 上からの位置 */
+    width: 14px;
+    height: 14px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    border: 4px solid #f6f8fa; /* 背景色と同じフチで線を切る */
+}
+
+/* 三角形の吹き出し（オプション：カードの左につく矢印） */
+.diary-entry::after {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 30px;
+    width: 0;
+    height: 0;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-right: 8px solid #e1e4e8; /* 枠線と同じ色 */
+}
+
+.diary-date {
+    font-size: 0.85rem;
+    color: #6a737d;
+    font-family: monospace;
+    background-color: #f1f8ff;
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.diary-title {
+    margin: 0 0 15px 0;
+    font-size: 1.4rem;
+    color: var(--primary-color);
+}
+
+.diary-body {
+    color: #444;
+    line-height: 1.8;
 }
 
 /* --- フッター --- */
 footer {
     text-align: center;
     padding: 40px;
-    color: #6a737d;
+    color: #888;
     font-size: 0.9rem;
 }
 
-html {
-    scroll-behavior: smooth;
+/* --- トップページ用の調整 --- */
+.project-card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #e1e4e8;
+    margin-bottom: 20px;
+}
+
+#skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+#skills .section-title {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.skill-group {
+    background: #ffffff;
+    flex: 1 1 300px;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #e1e4e8;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s;
+}
+
+.skill-group:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    border-color: var(--primary-color);
+}
+
+.skill-group h3 {
+    margin-top: 0;
+    font-size: 1.1rem;
+    color: #586069;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #f6f8fa;
+    padding-bottom: 10px;
+}
+
+.skill-group h3::before {
+    content: '';
+    display: block;
+    width: 4px;
+    height: 1.2em;
+    background: var(--primary-color);
+    border-radius: 2px;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tags span {
+    display: inline-block;
+    background-color: #f6f8fa;
+    color: #24292e;
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border: 1px solid #e1e4e8;
+    transition: all 0.2s ease;
+    cursor: default;
+}
+
+.tags span:hover {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border-color: var(--primary-color);
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(3, 102, 214, 0.3);
 }
