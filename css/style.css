@@ -156,3 +156,7 @@ footer {
     color: #6a737d;
     font-size: 0.9rem;
 }
+
+html {
+    scroll-behavior: smooth;
+}
