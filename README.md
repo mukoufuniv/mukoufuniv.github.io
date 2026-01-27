@@ -1,2 +1,5 @@
 # mukoufuniv.github.io
-自分のホームページです
+ポートフォリオサイトをgithubページで公開しています．
+
+際とはこちらから閲覧できます．
+https://mukoufuniv.github.io
