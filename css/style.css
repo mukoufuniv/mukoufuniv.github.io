@@ -157,6 +157,74 @@ footer {
     border-radius: 8px;
     border: 1px solid #e1e4e8;
     margin-bottom: 20px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.js .project-card {
+    cursor: pointer;
+}
+
+.js .project-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+    border-color: #d0d7de;
+}
+
+.project-card:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 3px;
+}
+
+.project-summary {
+    margin: 10px 0 0;
+}
+
+.project-details {
+    margin-top: 14px;
+}
+
+.project-points {
+    margin: 12px 0 0 18px;
+    padding: 0;
+    color: #444;
+}
+
+.project-points li {
+    margin-bottom: 6px;
+}
+
+.details-hint {
+    display: none;
+    font-size: 0.85rem;
+    color: #6a737d;
+    margin-top: 12px;
+}
+
+.js .details-hint {
+    display: block;
+}
+
+.js .project-details {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    margin-top: 0;
+    transition: max-height 0.3s ease, opacity 0.2s ease, margin-top 0.2s ease;
+}
+
+.js .project-card.is-open {
+    border-color: var(--primary-color);
+    box-shadow: 0 10px 20px rgba(3, 102, 214, 0.15);
+}
+
+.js .project-card.is-open .project-details {
+    max-height: 600px;
+    opacity: 1;
+    margin-top: 14px;
+}
+
+.js .project-card.is-open .details-hint {
+    color: #9da3ad;
 }
 
 #skills {
