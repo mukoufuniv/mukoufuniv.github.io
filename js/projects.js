@@ -38,17 +38,17 @@ document.addEventListener('DOMContentLoaded', () => {
             setState(!card.classList.contains('is-open'));
         };
 
-        // カードクリックで開閉（リンククリックは除外）
+        // カードクリックで開閉（リンクやボタン、メディア操作は除外）
         card.addEventListener('click', (event) => {
-            if (event.target.closest('a')) {
+            if (event.target.closest('a, button, video, img')) {
                 return;
             }
             toggle();
         });
 
-        // Enter/Spaceで開閉（リンク操作は除外）
+        // Enter/Spaceで開閉（リンクやボタン、メディア操作は除外）
         card.addEventListener('keydown', (event) => {
-            if (event.target.closest('a')) {
+            if (event.target.closest('a, button, video, img')) {
                 return;
             }
             if (event.key === 'Enter' || event.key === ' ') {
@@ -59,5 +59,102 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // 初期状態は閉じる
         setState(false);
+    });
+
+    // 動画・画像タブで表示中のメディアを切り替える
+    const mediaBlocks = document.querySelectorAll('.project-media');
+    mediaBlocks.forEach((media) => {
+        const video = media.querySelector('video');
+        const videoTabs = media.querySelectorAll('.video-tab');
+        if (video && videoTabs.length > 0) {
+            const source = video.querySelector('source');
+
+            const setActiveTab = (activeTab) => {
+                videoTabs.forEach((tab) => {
+                    const isActive = tab === activeTab;
+                    tab.classList.toggle('is-active', isActive);
+                    tab.setAttribute('aria-pressed', String(isActive));
+                });
+            };
+
+            const setVideoSrc = (src) => {
+                if (!src) {
+                    return;
+                }
+                if (source) {
+                    if (source.getAttribute('src') === src) {
+                        return;
+                    }
+                    source.setAttribute('src', src);
+                    video.load();
+                    return;
+                }
+                if (video.getAttribute('src') === src) {
+                    return;
+                }
+                video.setAttribute('src', src);
+                video.load();
+            };
+
+            videoTabs.forEach((tab) => {
+                tab.addEventListener('click', () => {
+                    const src = tab.getAttribute('data-video-src');
+                    setActiveTab(tab);
+                    setVideoSrc(src);
+                });
+            });
+
+            const initialTab = media.querySelector('.video-tab.is-active') || videoTabs[0];
+            if (initialTab) {
+                setActiveTab(initialTab);
+                setVideoSrc(initialTab.getAttribute('data-video-src'));
+            }
+        }
+
+        const image = media.querySelector('img');
+        const imageTabs = media.querySelectorAll('.image-tab');
+        if (image && imageTabs.length > 0) {
+            const caption = media.querySelector('.media-caption');
+
+            const setActiveTab = (activeTab) => {
+                imageTabs.forEach((tab) => {
+                    const isActive = tab === activeTab;
+                    tab.classList.toggle('is-active', isActive);
+                    tab.setAttribute('aria-pressed', String(isActive));
+                });
+            };
+
+            const setImage = (src, alt, captionText) => {
+                if (src && image.getAttribute('src') !== src) {
+                    image.setAttribute('src', src);
+                }
+                if (alt) {
+                    image.setAttribute('alt', alt);
+                }
+                if (caption && captionText) {
+                    caption.textContent = captionText;
+                }
+            };
+
+            imageTabs.forEach((tab) => {
+                tab.addEventListener('click', () => {
+                    const src = tab.getAttribute('data-image-src');
+                    const alt = tab.getAttribute('data-image-alt');
+                    const captionText = tab.getAttribute('data-image-caption');
+                    setActiveTab(tab);
+                    setImage(src, alt, captionText);
+                });
+            });
+
+            const initialTab = media.querySelector('.image-tab.is-active') || imageTabs[0];
+            if (initialTab) {
+                setActiveTab(initialTab);
+                setImage(
+                    initialTab.getAttribute('data-image-src'),
+                    initialTab.getAttribute('data-image-alt'),
+                    initialTab.getAttribute('data-image-caption')
+                );
+            }
+        }
     });
 });

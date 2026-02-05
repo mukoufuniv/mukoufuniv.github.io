@@ -71,6 +71,17 @@
                     <p>
                         VLM（視覚言語モデル）とカメラ映像を用いて、日常の物の所在をタグ無しで自動記録・検索できるシステム．
                     </p>
+                    <div class="project-media">
+                        <div class="image-switch" role="group" aria-label="VLM図の切り替え">
+                            <button type="button" class="image-tab is-active" data-image-src="image/vlm_abs.jpg" data-image-alt="VLM Lost Item Tracker のシステム概要図" data-image-caption="システム概要" aria-pressed="true">システム概要</button>
+                            <button type="button" class="image-tab" data-image-src="image/vlm_situ.jpg" data-image-alt="VLM Lost Item Tracker の使用シチュエーション図" data-image-caption="使用シチュエーション" aria-pressed="false">使用シチュエーション</button>
+                            <button type="button" class="image-tab" data-image-src="image/vlm_sample.png" data-image-alt="VLM Lost Item Tracker の検索結果画像" data-image-caption="検索結果" aria-pressed="false">検索結果</button>
+                        </div>
+                        <figure class="project-figure">
+                            <img class="project-image" src="image/vlm_abs.jpg" alt="VLM Lost Item Tracker のシステム概要図" loading="lazy" decoding="async">
+                            <figcaption class="media-caption">システム概要</figcaption>
+                        </figure>
+                    </div>
                     <ul class="project-points">
                         <li>目的: 物の置き場所をすぐに探せるようにする</li>
                         <li>特徴: タグ無しで検索できる</li>
@@ -96,6 +107,12 @@
                         <li>テーマ: Dataset Distillation</li>
                         <li>方向性: 性能向上</li>
                     </ul>
+                    <div class="project-media">
+                        <figure class="project-figure">
+                            <img class="project-image" src="image/dataset_distill.png" alt="Dataset Distillation の概要図" loading="lazy" decoding="async">
+                            <figcaption class="media-caption">概要図</figcaption>
+                        </figure>
+                    </div>
                     <div class="tags small-tags">
                         <span>Deep Learning</span>
                         <span>Research</span>
@@ -115,6 +132,16 @@
                     <p>
                         定型文を用いた心理的負担の少ないチャットアプリを企画・開発しました．
                     </p>
+                    <div class="project-media">
+                        <div class="video-switch" role="group" aria-label="デモ動画の切り替え">
+                            <button type="button" class="video-tab is-active" data-video-src="mov/viedo_sample1.mp4" aria-pressed="true">動画1</button>
+                            <button type="button" class="video-tab" data-video-src="mov/viedo_sample2.mp4" aria-pressed="false">動画2</button>
+                        </div>
+                        <video class="project-video" controls preload="metadata">
+                            <source src="mov/viedo_sample1.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
                     <ul class="project-points">
                         <li>課題: 連絡文面の作成負担</li>
                         <li>解決: 定型文でのスムーズな連絡</li>
